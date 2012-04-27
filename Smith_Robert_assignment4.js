@@ -28,13 +28,22 @@ var libORob = function (){
     	var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     	return emailPattern.test(elementValue);  
     };
+    var validatePhone = function(phoneDigits){
+    	if (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/){
+    		return lib.phoneDigits = true
+    	}else {
+    		return lib.phoneDigits = false
+    	}
+    };
+
 return{
 	"number": number,
 	"sum":0,
 	"capitalizeString": capitalizeString,
 	"numSum": numSum,
 	"daysBetween": daysBetween,
-	"validateEmail": validateEmail
+	"validateEmail": validateEmail,
+	"validatePhone": validatePhone
 };
 
 };
@@ -49,6 +58,8 @@ lib.numSum([1, "a", 2, "b"]);
 lib.daysBetween(new Date(2009, 04, 07), new Date(2012, 04, 26));
 
 lib.validateEmail("r2theob23@gmail.com");
+
+lib.validatePhone("3176520946");
 
 
 
