@@ -8,7 +8,7 @@ var libORob = function (){
         arr[i] = arr[i].substr(0,1).toUpperCase() + 
                  (arr[i].length > 1 ? arr[i].substr(1).toLowerCase() : "");
     	return lib.capitalizeString("");
-    };
+    	};
     };
     var numSum = function (array){
 		 for(var i = 0; i < array.length; i++) {
@@ -24,12 +24,17 @@ var libORob = function (){
  
         return parseInt((t2-t1)/(24*3600*1000));
     };
+    var validateEmail = function(elementValue){
+    	var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    	return emailPattern.test(elementValue);  
+    };
 return{
 	"number": number,
 	"sum":0,
 	"capitalizeString": capitalizeString,
 	"numSum": numSum,
-	"daysBetween": daysBetween
+	"daysBetween": daysBetween,
+	"validateEmail": validateEmail
 };
 
 };
@@ -41,7 +46,11 @@ lib.capitalizeString("robbie wants mr. donlan to pass him");
 
 lib.numSum([1, "a", 2, "b"]);
 
-lib.daysBetween(new Date(2009, 04, 07), new Date(2012, 04, 26))
+lib.daysBetween(new Date(2009, 04, 07), new Date(2012, 04, 26));
+
+lib.validateEmail("r2theob23@gmail.com");
+
+
 
 console.log(lib);
 
