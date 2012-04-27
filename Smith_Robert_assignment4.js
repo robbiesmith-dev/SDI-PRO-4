@@ -1,7 +1,7 @@
-var libORob = function (){
+var library = function (){
 	//Format a # to use a specific # of decimal places
 	var number = function ( otherNum ){
-		return libORob.number = otherNum.toFixed(2)
+		return lib.number = otherNum.toFixed(2)
 	};
 	//Title-case a string 
 	var capitalizeString = function (str) {
@@ -53,7 +53,7 @@ return{
 };
 
 };
-var lib = libORob();
+var lib = library();
 
 lib.number(2.1);
 
@@ -70,5 +70,6 @@ lib.validatePhone("3176520946");
 
 
 console.log(lib);
+
 
 
