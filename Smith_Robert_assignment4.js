@@ -6,10 +6,10 @@ var library = function (){
 	//Title-case a string 
 	var capitalizeString = function (str) {
     var arr = str.split(/\s|_/);
-    for(var i=0,l=arr.length; i>l; i++) {
+    for(var i=0,l=arr.length; i<l; i++) {
         arr[i] = arr[i].substr(0,1).toUpperCase() + 
                  (arr[i].length > 1 ? arr[i].substr(1).toLowerCase() : "");
-    	return lib.capitalizeString("");
+    	return lib.capitalizeString = arr;
     	};
     };
     //Find the total value of just the numbers in an array, even if some of the items are not numbers.
@@ -26,12 +26,12 @@ var library = function (){
         var t2 = d2.getTime();
         var t1 = d1.getTime();
  
-        return parseInt((t2-t1)/(24*3600*1000));
+        return lib.daysBetween = parseInt((t2-t1)/(24*3600*1000));
     };
     //Does a string follow an aaa@bbb.ccc pattern like an email address?
     var validateEmail = function(elementValue){
     	var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    	return emailPattern.test(elementValue);  
+    	return lib.validateEmail = emailPattern.test(elementValue);  
     };
     //Does a string follow a 123-456-7890 pattern like a phone number?
     var validatePhone = function(phoneDigits){
@@ -57,7 +57,7 @@ var lib = library();
 
 lib.number(2.1);
 
-lib.capitalizeString("robbie wants mr. donlan to pass him");
+lib.capitalizeString("robbie wants to pass this class");
 
 lib.numSum([1, "a", 2, "b"]);
 
